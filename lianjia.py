@@ -18,20 +18,6 @@ def getHtml(url):
         print("未能获取")
 
 
-def getDetail(html):
-    soup = BeautifulSoup(html, 'lxml')
-    info = soup.select('.info.clear')
-    for item in info:
-        yield {
-            'href': item.select('a')[0]['href'],
-            'title': item.select('.title')[0].get_text(),
-            'address': item.select('.address')[0].get_text(),
-            'flood': item.select('.flood')[0].get_text(),
-            'followInfo': item.select('.followInfo')[0].get_text(),
-            'totalPrice': item.select('.totalPrice')[0].get_text(),
-            'unitPrice': item.select('.unitPrice')[0].get_text()
-        }
-
 
 def getDetail(html):
     soup = BeautifulSoup(html, 'lxml')
