@@ -1,11 +1,8 @@
 # coding: utf-8
-
-
 import requests
 from bs4 import BeautifulSoup
 import re
 import pandas
-
 
 def getHtml(url):
     headers = {
@@ -16,8 +13,6 @@ def getHtml(url):
             return r.text
     except:
         print("未能获取")
-
-
 
 def getDetail(html):
     soup = BeautifulSoup(html, 'lxml')
